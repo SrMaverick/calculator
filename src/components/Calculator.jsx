@@ -87,8 +87,16 @@ function Calculator(){
         }
     }
 
-    function clear(e){
+    function clear(){
         setNum(0)
+    }
+
+    function C(){
+        if(num.length === 1){
+            setNum(0)
+        }else{
+            setNum(num.slice(0, num.length - 1))
+        }
     }
 
     function porcentage(){
@@ -120,7 +128,7 @@ function Calculator(){
                 <H1>{num}</H1>
             <div>
                 <Linha1 onClick={clear}>AC</Linha1>
-                <Linha1>C</Linha1>
+                <Linha1 onClick={C}>C</Linha1>
                 <Linha1 onClick={porcentage}>%</Linha1>
                 <Sinais onClick={operatorHandler} value="/">/</Sinais>
             </div>
